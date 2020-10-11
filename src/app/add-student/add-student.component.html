@@ -1,0 +1,72 @@
+<h3>Create Student</h3>  
+<div class="row">  
+  <div class="col-sm-4"></div>  
+  <div class="col-sm-4" >  
+    <div [hidden]="submitted" style="width: 400px;">  
+      <form [formGroup]="studentsaveform" #savestudent (ngSubmit)="saveStudent(student)">  
+          <div class="form-group">  
+              <label for="name">First Name</label>  
+              <input type="text" name="first_name" class="form-control" [(ngModel)]="student.first_name" #first_name="ngModel"   
+                 data-placement="right" title="First Name" >  
+              <!--<div class="alert alert-danger" *ngIf = "(firstName.touched) && (firstName.invalid)"   
+                style="margin-top: 5px;">  
+                  <span *ngIf="firsttName.errors.required">First Name is Required</span>  
+                    <span *ngIf = "firsttName.errors.minlength">   
+                        MinLength Error   
+                    </span>                     
+                </div>   -->             
+          </div>
+          <div class="form-group">  
+            <label for="name">Middle Name</label>  
+            <input type="text" class="form-control"  name="middle_name" [(ngModel)]="student.middle_name" #middle_name="ngModel"   
+               data-placement="right" title="Middle Name" >  
+        </div>
+        <div class="form-group">  
+            <label for="name">Last Name</label>  
+            <input type="text" class="form-control"  name="last_name"  [(ngModel)]="student.last_name" #last_name="ngModel" 
+               data-placement="right" title="Last Name" > 
+        </div>    
+    
+          <div class="form-group">  
+              <label for="name">Date of Admission</label>  
+              <input type="date" class="form-control" name="date_of_admission" #date_of_admission="ngModel"  [ngModel]="student.date_of_admission| date: 'yyyy-MM-dd'"  
+              (ngModelChange)="student.date_of_admission = $event" data-toggle="tooltip" data-placement="right" title="Date of admission">  
+                <!--<div class="alert alert-danger" *ngIf = "(date_of_admission.touched) && (date_of_admission.invalid)"   
+                style="margin-top: 5px;">  
+                  <span *ngIf="date_of_admission.errors.required">Date of admission is Required</span>                                        
+                </div> --> 
+          </div>  
+    
+          <div class="form-group">  
+            <label for="name">Date of Birth</label>  
+            <input type="date" class="form-control" name="date_of_birth" [ngModel]="student.date_of_birth| date: 'yyyy-MM-dd'" 
+            (ngModelChange)="student.date_of_birth = $event"  
+              data-toggle="tooltip" data-placement="right" title="Date of birth">  
+              <!--<div class="alert alert-danger" *ngIf = "(date_of_birth.touched) && (date_of_birth.invalid)"   
+              style="margin-top: 5px;">  
+                <span *ngIf="date_of_birth.errors.required">Date of birth is Required</span>                                        
+              </div> --> 
+        </div>  
+        <div class="form-group">  
+          <label for="class">Class</label>  
+          <input type="text" class="form-control"  name="class_name" [(ngModel)]="student.class_name" #class_name="ngModel" data-toggle="tooltip"   
+             data-placement="right" title="class" > 
+      </div>    
+      <br>
+          <button type="submit" class="btn btn-success">Submit</button>  
+      </form>  
+  </div>  
+  </div>  
+  <div class="col-sm-4"></div>  
+</div>  
+
+<div class="row">  
+  <div class="col-sm-4"></div>  
+  <div class="col-sm-4">  
+      <div [hidden]="!submitted">  
+         <!--<h4>Student Added SuccessFully!</h4> --> 
+         <button (click)="addStudentForm()" class='btn btn-primary'>Add More Student</button>  
+      </div>        
+  </div>  
+  <div class="col-sm-4"></div>  
+</div>  

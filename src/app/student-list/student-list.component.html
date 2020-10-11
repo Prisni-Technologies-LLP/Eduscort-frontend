@@ -1,0 +1,104 @@
+<div class="panel panel-default">  
+    <div class="panel-heading">  
+        <h1 style="text-align: center">Students</h1><br>  
+        <div class="alert alert-success" *ngIf='message'>{{message}}</div>        
+      </div>  
+    
+      
+    <div class="panel-body">  
+        <table  class="table table-hover table-sm" datatable [dtOptions]="dtOptions"  
+        [dtTrigger]="dtTrigger"  >  
+            <thead class="thead-light">  
+                <tr>  
+                    <th>First Name</th>  
+                    <th>Middle name</th>  
+                    <th>Last name</th>  
+                    <th>Date of Admission</th> 
+                    <th>Date of birth</th> 
+                    <th>Class Name</th>
+                    <th>Roll Number</th>  
+                </tr>  
+            </thead>  
+            <tbody>  
+                 <tr *ngFor="let student of students ">  
+                    <td>{{student.first_name}}</td>  
+                    <td>{{student.middle_name}}</td>  
+                    <td>{{student.last_name}}</td>
+                    <td>{{student.date_of_admission}}</td>
+                    <td>{{student.date_of_birth}}</td> 
+                    <td>{{student.class_name}}</td> 
+                    <td>{{student.roll_no}}</td>
+                    <td><button (click)="deleteStudent(student.student_id)" class='btn btn-primary'><i class="fa fa-futboll-0">Delete</i></button>   
+                      <button (click)="updateStudent(student.student_id)" class='btn btn-info'  
+                      data-toggle="modal" data-target="#myModal">Update</button>  
+                    </td>  
+                  </tr>   
+            </tbody><br>  
+        </table>
+        <div class="row">
+          <button (click)="createStudent()" class='btn btn-success'>Add new student</button>
+        </div>  
+        <p></p>
+        <div class="row">
+          <button (click)="goToWelcomePage()" class='btn btn-success'>Go to welcome page</button>
+        </div> 
+    </div>  
+  </div>   
+    
+  <div class="modal" id="myModal">  
+          <div class="modal-dialog">  
+            <div class="modal-content">  
+                  <!--<form [formGroup]="studentupdateform" #updstu (ngSubmit)="updateStu(updstu)">  
+               
+              <div class="modal-header">  
+                <h4 class="modal-title" style="text-align: center">Update Student</h4>  
+                  
+              </div> --> 
+                
+                
+              <!--<div class="modal-body" *ngFor="let student of students" >  
+                  <div [hidden]="isupdated">  
+    
+                      <input type="hidden" class="form-control"  formControlName="student_id" [(ngModel)]="student.student_id">  
+                              <div class="form-group">  
+                                  <label for="name">First Name</label>  
+                                  <input type="text" class="form-control"  formControlName="first_name" [(ngModel)]="student.first_name">  
+                              </div>  
+                        
+                              <div class="form-group">  
+                                  <label for="name">Middle name</label>  
+                                  <input type="text" class="form-control" formControlName="middle_name" [(ngModel)]="student.middle_name">  
+                              </div>  
+                              <div class="form-group">  
+                                <label for="name">Last name</label>  
+                                <input type="text" class="form-control" formControlName="last_name" [(ngModel)]="student.last_name">  
+                            </div>  
+                            <div class="form-group">  
+                                <label for="name">Date of admission</label>  
+                                <input type="date" class="form-control" formControlName="date_of_admission" [(ngModel)]="student.date_of_admission">  
+                            </div> 
+                            <div class="form-group">  
+                                <label for="name">Date of birth</label>  
+                                <input type="date" class="form-control" formControlName="date_of_brith" [(ngModel)]="student.date_of_birth">  
+                            </div>  
+                            <div class="form-group">  
+                                <label for="name">Class Name</label>  
+                                <input type="text" class="form-control" formControlName="class_name" [(ngModel)]="student.class_name">  
+                            </div>             
+                    </div>    
+                    <div [hidden]="!isupdated">  
+                        <h4>Student Detail Updated!</h4>  
+                    </div>          
+                        
+              </div> 
+                
+               
+              <div class="modal-footer" >  
+                <button type="submit" class="btn btn-success" [hidden]="isupdated">Update</button>  
+                <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="changeisUpdate()">Close</button>  
+              </div>  
+                
+          </form> --> 
+            </div>  
+          </div>  
+        </div>  
