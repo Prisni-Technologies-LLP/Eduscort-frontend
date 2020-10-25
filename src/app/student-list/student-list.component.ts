@@ -30,21 +30,20 @@ export class StudentListComponent implements OnInit {
   
   ngOnInit() {  
     this.isupdated=false;  
-    this.dtOptions = {  
+    /*this.dtOptions = {  
       pageLength: 6,  
       stateSave:true,  
       lengthMenu:[[6, 16, 20, -1], [6, 16, 20, "All"]],  
       processing: true  
-    };     
+    };  */  
     this.studentservice.getStudentList().subscribe(data =>{  
     this.students =data;  
-    this.dtTrigger.next();  
+    //this.dtTrigger.next();  
     })  
   }  
     
   deleteStudent(id: number) {  
-    
-    this.studentservice.deleteStudent(id)  
+      this.studentservice.deleteStudent(id, this.student)  
       .subscribe(  
         data => {  
           console.log(data);  
@@ -77,7 +76,8 @@ export class StudentListComponent implements OnInit {
     date_of_admission:new FormControl(),
     date_of_birth:new FormControl(),
     class_name:new FormControl(),
-    roll_no: new FormControl()  
+    roll_no: new FormControl(),
+    is_active: new FormControl() 
   });  
   
   updateStu(updstu){  
@@ -90,6 +90,7 @@ export class StudentListComponent implements OnInit {
    this.student.date_of_birth=this.dateOfBirth.value; 
    this.student.class_name=this.class.value;
    this.student.roll_no=this.roll_no.value;
+   this.student.is_active=this.is_active.value;
    console.log(this.lastName.value);  
      
   
@@ -132,6 +133,9 @@ export class StudentListComponent implements OnInit {
   }
   get roll_no(){
     return this.studentupdateform.get('roll_no');
+  }
+  get is_active(){
+    return this.studentupdateform.get('is_active');
   }
   changeisUpdate(){  
     this.isupdated=false;  

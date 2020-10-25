@@ -17,6 +17,7 @@
                     <th>Date of birth</th> 
                     <th>Class Name</th>
                     <th>Roll Number</th>  
+                    <th>is active</th>
                 </tr>  
             </thead>  
             <tbody>  
@@ -28,7 +29,8 @@
                     <td>{{student.date_of_birth}}</td> 
                     <td>{{student.class_name}}</td> 
                     <td>{{student.roll_no}}</td>
-                    <td><button (click)="deleteStudent(student.student_id)" class='btn btn-primary'><i class="fa fa-futboll-0">Delete</i></button>   
+                    <td>{{student.is_active}}</td>
+                    <td><button (click)="deleteStudent(student.student_id)" class='btn btn-primary'><i class="fa fa-futboll-0">Deactivate</i></button>   
                       <button (click)="updateStudent(student.student_id)" class='btn btn-info'  
                       data-toggle="modal" data-target="#myModal">Update</button>  
                     </td>  

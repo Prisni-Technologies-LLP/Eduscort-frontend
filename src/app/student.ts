@@ -7,4 +7,5 @@ export class Student {
     date_of_birth:Date; 
     class_name: String;
     roll_no: number;
+    is_active: String;
 }
