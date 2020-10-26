@@ -6,23 +6,19 @@
       <table><tr>
         <td><label>Class:</label></td>
       <td><select id="class_name" required 
-      [(ngModel)]="class" formControlName="class_name" (change)="loadStudentList(class_name)">
-        <option *ngFor="let class_name of classes" [value]="class_name">{{class_name}}</option>
-        <div [hidden]="classes.valid || classes.pristine"
-         class="alert alert-danger">
-      Class is required</div>
-      </select></td>&nbsp;&nbsp;
+      [(ngModel)]="class_name" class="form-control">
+        <option *ngFor="let class_name of classes" [value]="class_name">{{class_name}}</option> 
+        </select></td>&nbsp;&nbsp;
        <td>      
         <label for="date">Date:</label></td>
         <td><input type="date" id="date" required
-        [(ngModel)]="date_of_presence" name="date" formControlName="date"></td>       
+        [(ngModel)]="date" name="date" formControlName="date"></td>       
       </tr>
       </table>
        <div>
          <p></p>         
          <div class="panel-body" *ngIf="class_name">
-         <table  class="table table-hover table-sm" datatable [dtOptions]="dtOptions"  
-        [dtTrigger]="dtTrigger"  >  
+         <table  class="table table-hover table-sm">        
             <thead class="thead-light">  
                 <tr>  
                     <th>First Name</th>                       
@@ -41,7 +37,7 @@
                     <td>{{student.is_active}}</td>
                     <td><label>Is present</label></td>  
                     <td><input type="checkbox" id="is_present"
-                      [(ngModel)]="isPresent" 
+                      [(ngModel)]="is_present" 
                       formControlName="is_present"></td>                  
                   </tr>   
             </tbody><br>  
@@ -50,7 +46,7 @@
       </div> 
 </div>
 <p></p>
-  <button type="submit" class="btn btn-success" [disabled]="!AttendanceForm.form.valid">Submit</button>
+  <button type="submit" class="btn btn-success">Submit</button>
   &nbsp;<button type="button" class="btn btn-success" (click)="AttendanceForm.reset()">Reset</button>
 </form>
 <div>

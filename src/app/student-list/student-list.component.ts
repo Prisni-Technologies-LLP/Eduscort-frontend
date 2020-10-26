@@ -18,8 +18,6 @@ export class StudentListComponent implements OnInit {
   private router: Router) { }  
   
   studentsArray: any[] = [];  
-  dtOptions: DataTables.Settings = {};  
-  dtTrigger: Subject<any>= new Subject();  
   message:String;
   students: Observable<Student[]>;  
   student : Student=new Student();  
