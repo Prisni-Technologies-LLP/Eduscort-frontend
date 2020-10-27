@@ -1,3 +1,7 @@
+/**
+ * copyright Prisni Technologies LLP.
+ * Author: Debabrata Mukherjee
+ */
 import { Component, OnInit } from '@angular/core';  
 import { StudentService } from '../student.service';  
 import { Student } from '../student';  
@@ -53,7 +57,16 @@ export class StudentListComponent implements OnInit {
         error => console.log(error));  
         this.message=`Deleted student with id:${id}`
   }  
-  
+  viewDeactivatedStudents(){
+    this.studentservice.getDeactivatedStudentList().subscribe(data =>{  
+      this.students =data;
+    })
+  }
+  viewOnlyActiveStudents(){
+    this.studentservice.getStudentList().subscribe(data =>{  
+      this.students =data  
+      })  
+  }
   updateStudent(id: number){  
     this.router.navigate(['update-student', id]);
     /*this.studentservice.getStudent(id)  

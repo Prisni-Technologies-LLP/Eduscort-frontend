@@ -1,3 +1,7 @@
+/**
+ * copyright Prisni Technologies LLP.
+ * Author: Debabrata Mukherjee
+ */
 import { Component, OnInit } from '@angular/core';  
 import { StudentService } from '../student.service';  
 import {FormControl,FormGroup,Validators} from '@angular/forms';  

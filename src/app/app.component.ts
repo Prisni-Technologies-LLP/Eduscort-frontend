@@ -1,3 +1,7 @@
+/**
+ * copyright Prisni Technologies LLP.
+ * Author: Debabrata Mukherjee
+ */
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { WelcomeDataService } from './service/data/welcome-data.service';

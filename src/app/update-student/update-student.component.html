@@ -1,10 +1,7 @@
+<!--Copyright Prisni Technologies. Author: Debabrata Mukherjee-->
 <H1>Update Student</H1>
 <div class="container">
-    <form (ngSubmit)="save()" #studentForm="ngForm">
-    <fieldset class="form-group">
-        <label>Student id:</label>
-        <input type="text" [(ngModel)]="id" name="student_id" #student_id="ngModel" class="form-control" required="required">
-    </fieldset>
+    <form (ngSubmit)="save()" #studentForm="ngForm">    
     <fieldset class="form-group">
         <label>First name:</label>
         <input type="text" [(ngModel)]="student.first_name" name="first_name" #first_name="ngModel" class="form-control" required="required">
@@ -36,6 +33,11 @@
         <label>Roll Number:</label>
         <input type="text" name="roll_no" class="form-control" [(ngModel)]="student.roll_no"
          #class_name="ngModel" required="required">
+    </fieldset>
+    <fieldset class="form-group">
+        <label>Is Active:</label>
+        <input type="text" name="is_active" class="form-control" [(ngModel)]="student.is_active"
+         #class_name="ngModel">
     </fieldset>
     <button type="submit" class="btn btn-success" (click)="save()">Save</button>
 </form>

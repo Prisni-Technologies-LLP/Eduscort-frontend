@@ -1,3 +1,7 @@
+/**
+ * copyright Prisni Technologies LLP.
+ * Author: Debabrata Mukherjee
+ */
 export class StudentAttendance{
     student_id:number; 
     first_name: String;

@@ -1,3 +1,7 @@
+/**
+ * copyright Prisni Technologies LLP.
+ * Author: Debabrata Mukherjee
+ */
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 

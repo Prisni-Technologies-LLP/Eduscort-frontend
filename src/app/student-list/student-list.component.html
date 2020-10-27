@@ -1,3 +1,4 @@
+<!--Copyright Prisni Technologies. Author: Debabrata Mukherjee-->
 <div class="panel panel-default">  
     <div class="panel-heading">  
         <h1 style="text-align: center">Students</h1><br>  
@@ -35,17 +36,22 @@
                     </td>  
                   </tr>   
             </tbody><br>  
-        </table>
-        <div class="row">
-          <button (click)="createStudent()" class='btn btn-success'>Add new student</button>
-        </div>  
-        <p></p>
-        <div class="row">
-          <button (click)="goToWelcomePage()" class='btn btn-success'>Go to welcome page</button>
-        </div> 
+        </table>        
     </div>  
   </div>   
-    
+  <div class="container">
+    <table>
+    <tr><td><button (click)="createStudent()" class='btn btn-success'>Add new student</button></td>  
+      <td>&nbsp;&nbsp;   
+    <button (click)="goToWelcomePage()" class='btn btn-success'>Go to welcome page</button></td> </tr>
+  
+    <tr><td>
+    <button (click)="viewDeactivatedStudents()" class='btn btn-success'>View Deactivated Students</button></td>
+     <td>&nbsp;&nbsp;  
+    <button (click)="viewOnlyActiveStudents()" class='btn btn-success'>View Active Students</button></td></tr>
+  </table>
+  </div>   
+  
   <div class="modal" id="myModal">  
           <div class="modal-dialog">  
             <div class="modal-content">  

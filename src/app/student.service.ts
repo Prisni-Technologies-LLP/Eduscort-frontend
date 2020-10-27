@@ -1,3 +1,7 @@
+/**
+ * copyright Prisni Technologies LLP.
+ * Author: Debabrata Mukherjee
+ */
 import { Injectable } from '@angular/core';  
 import { HttpClient } from '@angular/common/http';  
 import { Observable } from 'rxjs';  
@@ -15,7 +19,10 @@ export class StudentService {
   
   getStudentList(): Observable<any> {  
     return this.http.get(`${this.baseUrl}`+'students/');  
-  }  
+  } 
+  getDeactivatedStudentList(): Observable<any> {  
+    return this.http.get(`${this.baseUrl}`+'students/deactivated');  
+  } 
   getClasses(): Observable<any> {
     return this.http.get(`${this.baseUrl}`+'classes/');
   }
