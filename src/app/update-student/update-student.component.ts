@@ -55,4 +55,7 @@ export class UpdateStudentComponent implements OnInit {
   goToWelcomePage(){
     this.router.navigate(['']);
   }
+  goToStudentMgmt(){
+    this.router.navigate(['students']);
+  }
 }

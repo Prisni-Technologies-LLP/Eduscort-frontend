@@ -3,10 +3,14 @@
     <div class="panel-heading">  
         <h1 style="text-align: center">Students</h1><br>  
         <div class="alert alert-success" *ngIf='message'>{{message}}</div>        
-      </div>  
-    
+      </div>     
       
     <div class="panel-body">  
+      <div>
+        <label>Search by first name:</label>
+        <input type="text" id="serchByFirstName" [(ngModel)]="student.first_name">
+        <button class="btn btn-success" (click)="searchByFirstName(student.first_name)">Search</button>
+      </div>
         <table  class="table table-hover table-sm">  
             <thead class="thead-light">  
                 <tr>  

@@ -51,4 +51,7 @@ export class StudentAttendanceComponent implements OnInit {
       })
 
     }
+    goToStudentMgmt(){
+      this.router.navigate(['students']);
+    }
   }

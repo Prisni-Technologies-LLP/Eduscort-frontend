@@ -14,7 +14,8 @@ const routes: Routes = [
   { path: '', redirectTo: 'welcome', pathMatch: 'full' },  
   { path: 'welcome', component: WelcomeComponent },  
   { path: 'students', component: StudentListComponent },
-  { path: 'students/deactivated', component: StudentListComponent},  
+  { path: 'students/deactivated', component: StudentListComponent}, 
+  { path: 'studentsByFirstName/:first_name', component: StudentListComponent}, 
   { path: 'add-student', component: AddStudentComponent },
   { path: 'update-student/:id', component: UpdateStudentComponent},
   { path: 'student-attendance', component: StudentAttendanceComponent}

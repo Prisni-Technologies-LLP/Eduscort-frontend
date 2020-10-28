@@ -43,7 +43,11 @@ export class StudentListComponent implements OnInit {
     //this.dtTrigger.next();  
     })  
   }  
-    
+  searchByFirstName(first_name: String){
+      this.studentservice.getStudentsByFirstName(first_name).subscribe(data =>{  
+        this.students =data; 
+        })  
+  }
   deleteStudent(id: number) {  
       this.studentservice.deleteStudent(id, this.student)  
       .subscribe(  

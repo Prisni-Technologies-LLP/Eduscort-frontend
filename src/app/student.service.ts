@@ -23,6 +23,9 @@ export class StudentService {
   getDeactivatedStudentList(): Observable<any> {  
     return this.http.get(`${this.baseUrl}`+'students/deactivated');  
   } 
+  getStudentsByFirstName(first_name: String):Observable<any>{
+    return this.http.get(`${this.baseUrl}/studentsByFirstName/${first_name}`);
+  }
   getClasses(): Observable<any> {
     return this.http.get(`${this.baseUrl}`+'classes/');
   }
