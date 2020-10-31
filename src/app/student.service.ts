@@ -37,7 +37,9 @@ export class StudentService {
   deleteStudent(id: number, value: any): Observable<any> {  
     return this.http.put(`${this.baseUrl}/delete-student/${id}`, value);  
   }  
-  
+  activateStudent(id: number, value: any): Observable<any> {  
+    return this.http.put(`${this.baseUrl}/activate-student/${id}`, value);  
+  }  
   getStudent(id: number): Observable<any> {  
     return this.http.get<Student>(`${this.baseUrl}/students/${id}`);  
   }  

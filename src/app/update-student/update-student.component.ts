@@ -3,7 +3,7 @@
  * Author: Debabrata Mukherjee
  */
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Event, Router } from '@angular/router';
 import { Student } from '../student';
 import { StudentService } from '../student.service';
 
@@ -16,6 +16,7 @@ export class UpdateStudentComponent implements OnInit {
   id: number
   student: Student
   studentUpdated: Boolean
+  checkBox: Boolean
   constructor(private studentService: StudentService,
     private route: ActivatedRoute, private router: Router) { }
 
@@ -26,7 +27,7 @@ export class UpdateStudentComponent implements OnInit {
     if(this.id!=-1){
     this.studentService.getStudent(this.id).subscribe(
       data=> this.student=data
-    )
+    )    
     }  
   }
   save(){
@@ -58,4 +59,11 @@ export class UpdateStudentComponent implements OnInit {
   goToStudentMgmt(){
     this.router.navigate(['students']);
   }
+  /*onCheckboxChange(e){
+    if (e.target.checked) {
+        this.student.is_active="Y"
+    }else{
+      this.student.is_active="N"
+    }
+  }*/
 }

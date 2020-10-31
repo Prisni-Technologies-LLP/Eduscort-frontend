@@ -158,4 +158,15 @@ export class StudentListComponent implements OnInit {
   goToWelcomePage(){
     this.router.navigate(['']);
   }
+  activateStudent(id: number){
+    this.studentservice.activateStudent(id, this.student)  
+      .subscribe(  
+        data => {  
+          console.log(data);             
+          this.studentservice.getDeactivatedStudentList().subscribe(data =>{  
+            this.students =data  
+            })  
+        },  
+        error => console.log(error)); 
+  }
 }  
