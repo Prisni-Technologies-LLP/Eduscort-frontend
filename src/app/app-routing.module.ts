@@ -9,6 +9,7 @@ import { AddStudentComponent } from './add-student/add-student.component';
 import { UpdateStudentComponent } from './update-student/update-student.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { StudentAttendanceComponent } from './student-attendance/student-attendance.component';
+import { PaymentComponent } from './payment/payment.component';
   
 const routes: Routes = [  
   { path: '', redirectTo: 'welcome', pathMatch: 'full' },  
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path: 'studentsByFirstName/:first_name', component: StudentListComponent}, 
   { path: 'add-student', component: AddStudentComponent },
   { path: 'update-student/:id', component: UpdateStudentComponent},
-  { path: 'student-attendance', component: StudentAttendanceComponent}
+  { path: 'student-attendance', component: StudentAttendanceComponent},
+  { path: 'payment', component: PaymentComponent}
 ];  
   
 @NgModule({  

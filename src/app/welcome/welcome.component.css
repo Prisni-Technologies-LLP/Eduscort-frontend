@@ -1,0 +1,19 @@
+h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.container{
+    margin-bottom: 80px;
+    margin-left: 0px;
+    padding: 20;
+    
+}
+.button{
+    padding-bottom: 10px;    
+    color: #eee;
+    background: #0f0;
+    text-align: center;
+}
+.copyright{
+    margin:40 0 0 10;
+    padding: 20;      
+}

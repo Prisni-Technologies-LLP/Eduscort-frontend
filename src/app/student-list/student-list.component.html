@@ -15,7 +15,7 @@
             <thead class="thead-light">  
                 <tr>  
                     <th>First Name</th>  
-                    <th>Middle name</th>  
+                     
                     <th>Last name</th>  
                     <th>Date of Admission</th> 
                     <th>Date of birth</th> 
@@ -26,8 +26,7 @@
             </thead>  
             <tbody>  
                  <tr *ngFor="let student of students ">  
-                    <td>{{student.first_name}}</td>  
-                    <td>{{student.middle_name}}</td>  
+                    <td>{{student.first_name}}</td>                       
                     <td>{{student.last_name}}</td>
                     <td>{{student.date_of_admission}}</td>
                     <td>{{student.date_of_birth}}</td> 
@@ -45,7 +44,7 @@
     </div>  
   </div>   
   <div class="container">
-    <table>
+    <table class="buttons">
     <tr><td><button (click)="createStudent()" class='btn btn-success'>Add new student</button></td>  
       <td>&nbsp;&nbsp;   
     <button (click)="goToWelcomePage()" class='btn btn-success'>Go to welcome page</button></td> &nbsp;&nbsp;
@@ -55,6 +54,7 @@
      <td>&nbsp;&nbsp;  
     <button (click)="viewOnlyActiveStudents()" class='btn btn-success'>View Active Students</button></td></tr>
   </table>
+  <p>&copy; Prisni Technologies LLP 2020</p>
   </div>   
   
   <div class="modal" id="myModal">  
