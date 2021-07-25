@@ -1,0 +1,57 @@
+<!--<p>student-attendance works!</p>-->
+<p></p>
+<h2>Student Attendance</h2>
+<form (ngSubmit)="onSubmit()" [formGroup]="AttendanceForm">
+<div class="form-group">    
+      <table><tr>
+        <td><label>Class:</label></td>
+      <td><select id="class_name" required 
+      [(ngModel)]="class_name" class="form-control">
+        <option *ngFor="let class_name of classes" [value]="class_name">{{class_name}}</option> 
+        </select></td>&nbsp;&nbsp;
+       <td>      
+        <label for="date">Date:</label></td>
+        <td><input type="date" id="date" required
+        [(ngModel)]="date" name="date" formControlName="date"></td>       
+      </tr>
+      </table>
+       <div>
+         <p></p>         
+         <div *ngIf="class_name" class="panel-body">
+         <table  class="table table-hover table-sm">        
+            <thead class="thead-light">  
+                <tr>  
+                    <th>First Name</th>                       
+                    <th>Last name</th>                      
+                    <th>Class Name</th>
+                    <th>Roll Number</th>  
+                    <th>is_active</th>
+                </tr>  
+            </thead>  
+            <tbody>  
+                 <tr *ngFor="let student of students">  
+                    <td>{{student.first_name}}</td>                        
+                    <td>{{student.last_name}}</td>                    
+                    <td>{{student.class_name}}</td> 
+                    <td>{{student.roll_no}}</td>
+                    <td>{{student.is_active}}</td>
+                    <td><label>Is present</label></td>  
+                    <td><input type="checkbox" id="is_present"
+                      [(ngModel)]="is_present" 
+                      formControlName="is_present"></td>                  
+                  </tr>   
+            </tbody><br>  
+        </table> 
+       </div>
+      </div> 
+</div>
+<p></p>
+  <button type="submit" class="btn btn-success">Submit</button>
+  &nbsp;<button type="button" class="btn btn-success" (click)="AttendanceForm.reset()">Reset</button>
+</form>
+<div>
+  <br>
+    <button (click)="goToWelcomePage()" class="btn btn-success">Go To Welcome Page</button>&nbsp;
+    <button (click)="goToStudentMgmt()" class="btn btn-success">Go To Student Management</button>
+    
+</div>

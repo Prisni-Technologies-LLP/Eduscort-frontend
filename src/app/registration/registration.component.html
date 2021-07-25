@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>New user registration</title>
+</head>
+<body>
+    <h1>New User's registration</h1>
+    <div class="container">
+        <form (ngSubmit)="save()" #registrationForm="ngForm">    
+        <fieldset class="form-group">
+            <label>First name:</label>
+            <input type="text" [(ngModel)]="user.first_name" name="first_name" #first_name="ngModel" class="form-control" required>
+        </fieldset>
+    
+        <fieldset class="form-group">
+            <label>Last name:</label>
+            <input type="text" [(ngModel)]="user.last_name" name="last_name" #last_name="ngModel" class="form-control" required>
+        </fieldset>
+        <fieldset class="form-group">
+            <label>Email:</label>
+            <input type="email" [(ngModel)]="user.email" name="email" #email="ngModel" class="form-control" ngModel email="true">
+        </fieldset>
+        <fieldset class="form-group">
+            <label>User id:</label>
+            <input type="text" [(ngModel)]="user.userId" name="user_name" #email="ngModel" class="form-control" required>
+        </fieldset>
+        <fieldset class="form-group">
+            <label>Password:</label>
+            <input type="password" [(ngModel)]="user.password" name="password" #password="ngModel" class="form-control" required="required">
+        </fieldset>
+        <fieldset class="form-group">
+            <label>Confirm password:</label>
+            <input type="password" [(ngModel)]="user.confirmPassword" name="confirmPassword" #confirmPassword="ngModel" class="form-control" required="required">
+        </fieldset>
+        
+        <button type="submit" class="btn btn-success" (click)="save()">Register</button>
+        &nbsp;<button type="reset" class="btn btn-success" (click)="reset()">Reset</button>
+        &nbsp;<button type="button" class="btn btn-success" (click)="goToWelcomePage()">Go to welcome page</button>
+    </form>
+    </div>
+</body>
+</html>
