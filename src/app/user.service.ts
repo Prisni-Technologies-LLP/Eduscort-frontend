@@ -16,6 +16,7 @@ export class UserService {
     return this.http.post(`${this.baseUrl}`+'user/add/', user);  
   }  
   validateLogin(u: object): Observable<object>{
+    console.log('The request body is: '+u);
     return this.http.post(`${this.baseUrl}`+'loginUser/', u); 
   }
 }

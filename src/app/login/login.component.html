@@ -2,12 +2,12 @@
     <form (ngSubmit)="login()" #loginForm="ngForm">    
     <fieldset class="form-group">
         <label>User name:</label>
-        <input type="text" [(ngModel)]="u.userId" name="user_name" #user_name="ngModel" class="form-control" required="required">
+        <input type="text" [(ngModel)]="loginObject.userId" name="user_name" #user_name="ngModel" class="form-control" required="required">
     </fieldset>
 
     <fieldset class="form-group">
         <label>Password:</label>
-        <input type="password" [(ngModel)]="u.password" name="password" #password="ngModel" class="form-control" required="required">
+        <input type="password" [(ngModel)]="loginObject.password" name="password" #password="ngModel" class="form-control" required="required">
     </fieldset>
     <button type="submit" class="btn btn-success" (click)="login()">Login</button>
     
@@ -16,6 +16,7 @@
 <button type="button" class="btn btn-success" (click)="signUp()">Signup</button>&nbsp;
 <button type="button" class="btn btn-success" (click)="goToWelcomePage()">Go to Welcome page</button>
 </div>
-<div class="loginstatus">
-    {{loginStatus}}
-</div>
+<div class="copyright">  
+    <br>  
+    <P>&copy; 2021 Prisni Technologies LLP.</P>
+    </div>

@@ -12,31 +12,31 @@ import { UserService } from '../user.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  u: User;
+  loginObject: Login;
   logins: Login[];
   loginStatus: String;
   constructor(private us: UserService,
     private router: Router) { }
   ngOnInit(): void {
-    this.u=new User();
+    this.loginObject=new Login();
   }
   reset(){
-    this.u.userId='';
-    this.u.password='';
+    this.loginObject.userId='';
+    this.loginObject.password='';
   }
   login(){
-    if(this.u.userId!='' && this.u.userId!=null 
-    && this.u.password!='' && this.u.password!=null){
-      this.us.validateLogin(this.u).subscribe (
+    if(this.loginObject.userId!='' && this.loginObject.userId!=null 
+    && this.loginObject.password!='' && this.loginObject.password!=null){
+      this.us.validateLogin(this.loginObject).subscribe (
         data => {
           //this.logins= data;
           console.log(data);
-          /*if(this.u!=null){
+          if(this.loginObject!=null){
           this.router.navigate(['students']);
           }else{
             this.loginStatus='You are not authprized to login, please register yourself.';
             alert(this.loginStatus);
-          }*/
+          }
         }
       )
     }else{

@@ -28,7 +28,7 @@ import { LoginComponent } from './login/login.component';
   declarations: [  
     AppComponent,  
     StudentListComponent,  
-    AddStudentComponent, UpdateStudentComponent, WelcomeComponent, StudentAttendanceComponent, HighlightDirective, PaymentComponent, RegistrationComponent, LoginComponent,  
+    AddStudentComponent, UpdateStudentComponent, WelcomeComponent, StudentAttendanceComponent, HighlightDirective, PaymentComponent, RegistrationComponent, LoginComponent  
   ],  
   imports: [  
     BrowserModule,  
