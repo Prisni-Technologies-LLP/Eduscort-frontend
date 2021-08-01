@@ -24,15 +24,15 @@
               "src/assets"
             ],
             "styles": [
-              "C:/Users/hp/node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"              
             ],
             "scripts": [
               //"C:/Users/hp/node_modules/jquery/dist/jquery.js",
               //"C:/Users/hp/node_modules/datatables.net/js/jquery.dataTables.js",
-              "C:/Users/hp/node_modules/bootstrap/dist/css/bootstrap.css",
-              "C:/Users/hp/node_modules/bootstrap/dist/js/bootstrap.js",
-              "C:/Users/hp/node_modules/bootstrap/dist/js/bootstrap.js"
+              "./node_modules/bootstrap/dist/css/bootstrap.css",
+              "./node_modules/bootstrap/dist/js/bootstrap.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.js"
             ]
           },
           "configurations": {
